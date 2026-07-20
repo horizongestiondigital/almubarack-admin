@@ -1,4 +1,4 @@
-"""
+﻿"""
 AL MUBARACK Service - Application principale
 """
 from flask import Flask
@@ -9,7 +9,7 @@ from models import db, Admin
 
 login_manager = LoginManager()
 login_manager.login_view = "auth.login"
-login_manager.login_message = "Veuillez vous connecter pour accéder à cette page."
+login_manager.login_message = "Veuillez vous connecter pour acceder a cette page."
 login_manager.login_message_category = "warning"
 
 
@@ -42,6 +42,7 @@ def load_user(admin_id):
     return Admin.query.get(int(admin_id))
 
 
+app = create_app()
+
 if __name__ == "__main__":
-    app = create_app()
     app.run(host="0.0.0.0", port=5000, debug=True)
