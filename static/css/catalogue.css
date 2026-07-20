@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --nuit: #0F172A;
+    --nuit-clair: #1E293B;
+    --blanc: #F8FAFC;
+    --whatsapp: #25D366;
+    --whatsapp-dark: #1DA851;
+    --bleu: #38BDF8;
+    --ambre: #FBBF24;
+    --texte: #1c2b30;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--blanc);
+    color: var(--texte);
+}
+h1, h2, h3 { font-family: "Space Grotesk", "Segoe UI", sans-serif; }
+
+a { color: inherit; }
+
+/* --- En-tête --- */
+.entete { background: var(--nuit); color: white; padding: 1rem 1.5rem; position: sticky; top: 0; z-index: 50; }
+.entete-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; }
+.marque { display: flex; align-items: center; gap: 0.8rem; }
+.logo { height: 48px; width: 48px; object-fit: cover; border-radius: 10px; }
+.marque h1 { font-size: 1.15rem; letter-spacing: 0.02em; }
+.marque h1 span { color: var(--ambre); }
+.tagline { font-size: 0.75rem; color: #94a3b8; margin-top: 0.1rem; }
+
+.btn-whatsapp-header {
+    display: flex; align-items: center; gap: 0.4rem;
+    background: var(--whatsapp); color: white; text-decoration: none;
+    padding: 0.55rem 1rem; border-radius: 30px; font-weight: 600; font-size: 0.9rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-whatsapp-header:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37,211,102,0.4); }
+.icone-whatsapp { color: #dcffea; font-size: 0.7rem; }
+
+/* --- Hero --- */
+.hero { position: relative; height: 320px; display: flex; align-items: center; overflow: hidden; }
+.hero-image {
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-size: cover; background-position: center;
+    filter: brightness(0.4) saturate(1.1);
+}
+.hero-texte { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; color: white; }
+.hero-texte h2 { font-size: 1.7rem; line-height: 1.3; max-width: 560px; margin-bottom: 0.8rem; }
+.hero-texte p { font-size: 0.95rem; color: #e2e8f0; max-width: 480px; }
+
+/* --- Filtres --- */
+.filtres {
+    display: flex; gap: 0.6rem; flex-wrap: wrap; padding: 1.2rem 1.5rem;
+    max-width: 1100px; margin: 0 auto; position: sticky; top: 76px; background: var(--blanc); z-index: 40;
+}
+.filtre-btn {
+    background: white; border: 1.5px solid #dde3e5; color: var(--texte);
+    padding: 0.5rem 1rem; border-radius: 30px; font-size: 0.85rem; font-weight: 500;
+    cursor: pointer; transition: all 0.2s ease;
+}
+.filtre-btn:hover { border-color: var(--bleu); }
+.filtre-btn.actif { background: var(--nuit); color: white; border-color: var(--nuit); }
+
+/* --- Catalogue --- */
+.catalogue {
+    max-width: 1100px; margin: 0 auto; padding: 0.5rem 1.5rem 3rem;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.2rem;
+}
+.catalogue-vide { grid-column: 1/-1; text-align: center; color: #94a3b8; padding: 3rem 0; }
+
+@keyframes entreeCarte {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.carte-produit {
+    background: white; border-radius: 14px; overflow: hidden; border: 1px solid #e5eaec;
+    animation: entreeCarte 0.4s ease both;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.carte-produit:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(15,23,42,0.12); }
+.carte-image-wrap { aspect-ratio: 1/1; background: #f1f5f9; overflow: hidden; }
+.carte-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.carte-produit:hover .carte-image { transform: scale(1.06); }
+.carte-contenu { padding: 1rem; }
+.carte-contenu h3 { font-size: 0.92rem; font-weight: 600; line-height: 1.3; margin-bottom: 0.8rem; min-height: 2.4em; }
+
+@keyframes pulseWhatsapp {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
+    50% { box-shadow: 0 0 0 6px rgba(37,211,102,0); }
+}
+.btn-commander {
+    display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+    background: var(--whatsapp); color: white; text-decoration: none;
+    padding: 0.65rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+    animation: pulseWhatsapp 2.4s ease-in-out infinite;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+.btn-commander:hover { background: var(--whatsapp-dark); transform: translateY(-2px); }
+
+/* --- Pied de page --- */
+.pied { background: var(--nuit); color: #cbd5e1; padding: 2.5rem 1.5rem; text-align: center; margin-top: 2rem; }
+.pied-inner { max-width: 500px; margin: 0 auto; }
+.pied-logo { height: 50px; width: 50px; object-fit: cover; border-radius: 10px; margin-bottom: 0.8rem; }
+.pied p { font-size: 0.88rem; margin: 0.3rem 0; }
+.pied a { color: var(--whatsapp); text-decoration: none; font-weight: 600; }
+.pied-hgd { margin-top: 1rem; font-size: 0.72rem; color: #64748b; }
+
+/* --- Bouton flottant WhatsApp --- */
+.bouton-flottant {
+    position: fixed; bottom: 22px; right: 22px; width: 58px; height: 58px;
+    background: var(--whatsapp); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 20px rgba(37,211,102,0.5); z-index: 60;
+    animation: pulseWhatsapp 2.4s ease-in-out infinite;
+    transition: transform 0.15s ease;
+}
+.bouton-flottant:hover { transform: scale(1.08); }
+.icone-whatsapp-grand { color: white; font-size: 1.6rem; }
+
+@media (max-width: 640px) {
+    .hero { height: 260px; }
+    .hero-texte h2 { font-size: 1.3rem; }
+    .filtres { top: 70px; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+}
+
+/* --- À propos --- */
+.a-propos { background: white; padding: 2.5rem 1.5rem; }
+.a-propos-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 220px 1fr; gap: 2rem; align-items: center; }
+.a-propos-image { width: 100%; height: 180px; object-fit: cover; border-radius: 14px; }
+.a-propos h2 { font-size: 1.3rem; margin-bottom: 0.6rem; color: var(--nuit); }
+.a-propos p { font-size: 0.92rem; line-height: 1.6; color: #475569; }
+
+/* --- Recherche --- */
+.recherche-wrap { max-width: 1100px; margin: 1.5rem auto 0; padding: 0 1.5rem; }
+.recherche-input {
+    width: 100%; padding: 0.8rem 1.1rem; border: 1.5px solid #dde3e5; border-radius: 30px;
+    font-size: 0.95rem; font-family: inherit; transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.recherche-input:focus { outline: none; border-color: var(--bleu); box-shadow: 0 0 0 4px rgba(56,189,248,0.15); }
+
+/* --- Badge produit --- */
+.carte-image-wrap { position: relative; }
+.carte-badge {
+    position: absolute; top: 8px; left: 8px; z-index: 2;
+    background: var(--ambre); color: var(--nuit); font-size: 0.68rem; font-weight: 700;
+    padding: 0.25rem 0.6rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.03em;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* --- Galerie multi-images --- */
+.galerie-fleche {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+    width: 28px; height: 28px; border-radius: 50%; border: none;
+    background: rgba(15,23,42,0.55); color: white; font-size: 1.1rem; line-height: 1;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.2s ease, background 0.15s ease;
+}
+.carte-produit:hover .galerie-fleche { opacity: 1; }
+.galerie-fleche:hover { background: rgba(15,23,42,0.8); }
+.galerie-fleche-gauche { left: 8px; }
+.galerie-fleche-droite { right: 8px; }
+
+.galerie-points {
+    position: absolute; bottom: 8px; left: 0; right: 0; z-index: 2;
+    display: flex; justify-content: center; gap: 5px;
+}
+.point {
+    width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(15,23,42,0.2); cursor: pointer; transition: background 0.15s ease, transform 0.15s ease;
+}
+.point.actif { background: white; transform: scale(1.3); }
+
+@media (max-width: 640px) {
+    .a-propos-inner { grid-template-columns: 1fr; }
+    .a-propos-image { height: 200px; }
+    .galerie-fleche { opacity: 1; } /* toujours visibles sur mobile, pas de survol possible */
+}
+
+/* --- Contacts en-tête (appel + WhatsApp) --- */
+.entete-contacts { display: flex; align-items: center; gap: 0.6rem; }
+.btn-appel {
+    display: flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.12);
+    text-decoration: none; font-size: 1.1rem; transition: background 0.15s ease, transform 0.15s ease;
+}
+.btn-appel:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+
+/* --- Section Nouveautés --- */
+.nouveautes { max-width: 1100px; margin: 2rem auto 0; padding: 0 1.5rem; }
+.nouveautes-titre { font-size: 1.15rem; color: var(--nuit); margin-bottom: 1rem; }
+.nouveautes-grille {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;
+}
+
+/* --- Zoom sur les images (icône + lightbox) --- */
+.carte-image { cursor: zoom-in; }
+.icone-zoom {
+    position: absolute; bottom: 8px; right: 8px; z-index: 2;
+    background: rgba(15,23,42,0.55); color: white; font-size: 0.85rem;
+    width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.2s ease; pointer-events: none;
+}
+.carte-produit:hover .icone-zoom { opacity: 1; }
+
+.lightbox {
+    display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.92); z-index: 200;
+    align-items: center; justify-content: center; padding: 2rem;
+}
+.lightbox.ouvert { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.lightbox-fermer {
+    position: absolute; top: 20px; right: 24px; background: rgba(255,255,255,0.12); border: none;
+    color: white; width: 42px; height: 42px; border-radius: 50%; font-size: 1.3rem; cursor: pointer;
+    transition: background 0.15s ease;
+}
+.lightbox-fermer:hover { background: rgba(255,255,255,0.25); }
+
+/* --- Carte Google Maps (pied de page) --- */
+.pied-carte { margin: 1.2rem 0; }
+
+/* --- Bouton retour en haut --- */
+.retour-haut {
+    position: fixed; bottom: 22px; left: 22px; width: 46px; height: 46px; border-radius: 50%;
+    background: var(--nuit); color: white; border: none; font-size: 1.2rem; cursor: pointer;
+    box-shadow: 0 6px 16px rgba(15,23,42,0.35); z-index: 60;
+    opacity: 0; pointer-events: none; transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.retour-haut.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.retour-haut:hover { background: var(--nuit-clair); }
+
+/* --- Bouton "Voir les détails" --- */
+.btn-details {
+    display: block; width: 100%; background: white; color: var(--nuit); border: 1.5px solid #dde3e5;
+    padding: 0.55rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer;
+    margin-bottom: 0.5rem; transition: border-color 0.15s ease, background 0.15s ease;
+}
+.btn-details:hover { border-color: var(--nuit); background: #f8fafc; }
+
+/* --- Fenêtre de détails produit --- */
+.modal-details {
+    display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.55); z-index: 210;
+    align-items: center; justify-content: center; padding: 1.2rem;
+}
+.modal-details.ouvert { display: flex; }
+.modal-details-boite {
+    background: white; border-radius: 16px; max-width: 480px; width: 100%; max-height: 90vh;
+    overflow-y: auto; position: relative; animation: entreeCarte 0.25s ease both;
+}
+.modal-details-fermer {
+    position: absolute; top: 12px; right: 12px; z-index: 2;
+    background: rgba(15,23,42,0.55); color: white; border: none; width: 34px; height: 34px;
+    border-radius: 50%; font-size: 1rem; cursor: pointer; transition: background 0.15s ease;
+}
+.modal-details-fermer:hover { background: rgba(15,23,42,0.8); }
+.modal-details-image { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 16px 16px 0 0; }
+.modal-details-contenu { padding: 1.3rem 1.4rem 1.5rem; }
+.modal-details-contenu h3 { font-size: 1.05rem; margin-bottom: 0.8rem; }
+.modal-details-specs { list-style: none; margin-bottom: 1.1rem; }
+.modal-details-specs li {
+    font-size: 0.88rem; padding: 0.5rem 0; border-bottom: 1px solid #eef1f2; color: #475569;
+}
+.modal-details-specs li:before { content: "✓ "; color: var(--whatsapp); font-weight: 700; }

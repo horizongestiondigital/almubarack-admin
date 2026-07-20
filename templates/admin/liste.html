@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Produits - AL MUBARACK Admin{% endblock %}
+{% block content %}
+<div class="page-header">
+    <h1>Produits</h1>
+    <a href="{{ url_for('produits_admin.ajouter') }}" class="btn-primary">+ Ajouter un produit</a>
+</div>
+<p class="subtitle">{{ produits|length }} produit(s) — visibles immédiatement sur le site public.</p>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Nom</th>
+            <th>Catégorie</th>
+            <th>Badge</th>
+            <th>Photos</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in produits %}
+        <tr>
+            <td>
+                {% if p.images %}
+                <img src="{{ url_affichage(p.images[0].chemin) }}" class="miniature" alt="{{ p.nom }}">
+                {% endif %}
+            </td>
+            <td>{{ p.nom }}</td>
+            <td>{{ categories.get(p.categorie, p.categorie) }}</td>
+            <td>{{ p.badge }}</td>
+            <td>{{ p.images|length }}</td>
+            <td>
+                <a href="{{ url_for('produits_admin.modifier', produit_id=p.id) }}" class="btn-link">Modifier</a>
+                &nbsp;|&nbsp;
+                <form method="POST" action="{{ url_for('produits_admin.supprimer', produit_id=p.id) }}"
+                      onsubmit="return confirm('Supprimer {{ p.nom }} définitivement ?');" style="display:inline;">
+                    <button type="submit" class="btn-link-danger">Supprimer</button>
+                </form>
+            </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6" class="empty-row">Aucun produit pour le moment. Clique sur "+ Ajouter un produit".</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

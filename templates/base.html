@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Administration - AL MUBARACK Service{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+    <header class="topbar">
+        <div class="topbar-brand">AL MUBARACK <span>ADMIN</span></div>
+        <nav class="topbar-nav">
+            <a href="{{ url_for('produits_admin.liste') }}">Produits</a>
+            <a href="{{ url_for('catalogue.public') }}" target="_blank">Voir le site public</a>
+        </nav>
+        <div class="topbar-user">
+            <a href="{{ url_for('auth.mon_compte') }}" class="btn-logout" style="background:rgba(255,255,255,0.15); color:white;">Mon compte</a>
+            <a href="{{ url_for('auth.logout') }}" class="btn-logout">Déconnexion</a>
+        </div>
+    </header>
+    {% endif %}
+
+    <main class="content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                <div class="flash flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

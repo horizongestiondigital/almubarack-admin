@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}{{ "Modifier" if produit else "Ajouter" }} un produit - AL MUBARACK Admin{% endblock %}
+{% block content %}
+<h1>{{ "Modifier le produit" if produit else "Ajouter un produit" }}</h1>
+
+<form method="POST" enctype="multipart/form-data" class="data-form">
+    <label>Nom du produit *</label>
+    <input type="text" name="nom" value="{{ produit.nom if produit else '' }}" required>
+
+    <label>Catégorie *</label>
+    <select name="categorie" required>
+        <option value="">-- Choisir --</option>
+        {% for valeur, libelle in categories %}
+        <option value="{{ valeur }}" {% if produit and produit.categorie == valeur %}selected{% endif %}>{{ libelle }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Badge</label>
+    <input type="text" name="badge" value="{{ produit.badge if produit else 'Disponible' }}" placeholder="Ex: Disponible, Neuf, Promo">
+
+    <label>Détails / caractéristiques (optionnel)</label>
+    <textarea name="details" rows="4" placeholder="Une ligne par caractéristique, exemple :&#10;Mémoire : 128Go&#10;Couleur : Noir&#10;État : Neuf">{{ produit.details if produit else '' }}</textarea>
+    <p class="hint">Écris une caractéristique par ligne (Entrée pour passer à la ligne suivante).</p>
+
+    {% if produit and produit.images %}
+    <h3>Photos actuelles</h3>
+    <div class="galerie-actuelle">
+        {% for img in produit.images %}
+        <div class="galerie-item">
+            <img src="{{ url_affichage(img.chemin) }}" class="apercu-image">
+            <form method="POST" action="{{ url_for('produits_admin.supprimer_image', image_id=img.id) }}"
+                  onsubmit="return confirm('Supprimer cette photo ?');">
+                <button type="submit" class="btn-link-danger">Retirer</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+    <p class="hint">Un produit doit garder au moins 1 photo.</p>
+    {% endif %}
+
+    <label>{{ "Ajouter des photos (optionnel)" if produit else "Photos (1 à 3) *" }}</label>
+    <input type="file" name="images" accept=".png,.jpg,.jpeg,.webp" multiple>
+    <p class="hint">Maximum 3 photos par produit au total. Formats : PNG, JPG, WEBP.</p>
+
+    <button type="submit" class="btn-primary">
+        {{ "Enregistrer les modifications" if produit else "Créer le produit" }}
+    </button>
+</form>
+{% endblock %}

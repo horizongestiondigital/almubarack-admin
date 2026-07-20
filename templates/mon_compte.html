@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Mon compte - AL MUBARACK Admin{% endblock %}
+{% block content %}
+<h1>Mon compte</h1>
+<p class="subtitle">Change ton mot de passe ici quand tu veux.</p>
+
+<form method="POST" class="data-form">
+    <h3>Changer mon mot de passe</h3>
+    <p class="hint">Minimum 8 caractères, avec au moins une lettre et un chiffre.</p>
+    <label>Mot de passe actuel</label>
+    <input type="password" name="ancien_mdp" required>
+    <label>Nouveau mot de passe</label>
+    <input type="password" name="nouveau_mdp" required>
+    <label>Confirmer le nouveau mot de passe</label>
+    <input type="password" name="confirmation_mdp" required>
+    <button type="submit" class="btn-primary">Mettre à jour</button>
+</form>
+{% endblock %}

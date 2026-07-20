@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ nom_boutique }} — Distributeur agréé TECNO, Kindia</title>
+<meta name="description" content="Téléphones, accessoires, énergie solaire, climatiseurs et électroménager à Kindia. Distributeur agréé TECNO, Stand B017. Commandez directement sur WhatsApp.">
+<meta property="og:title" content="{{ nom_boutique }} — Distributeur agréé TECNO">
+<meta property="og:description" content="Téléphones, accessoires, énergie solaire et électroménager à Kindia. Commandez directement sur WhatsApp.">
+<meta property="og:image" content="{{ url_for('static', filename='marque/boutique-facade.jpg') }}">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/catalogue.css') }}">
+</head>
+<body>
+
+<header class="entete">
+    <div class="entete-inner">
+        <div class="marque">
+            <img src="{{ url_for('static', filename='marque/logo.jpg') }}" alt="{{ nom_boutique }}" class="logo">
+            <div>
+                <h1>AL MUBARACK <span>SERVICE</span></h1>
+                <p class="tagline">Distributeur agréé TECNO — Kindia, Stand B017</p>
+            </div>
+        </div>
+        <div class="entete-contacts">
+            <a href="tel:+{{ numero_whatsapp }}" class="btn-appel" aria-label="Appeler">📞</a>
+            <a href="https://wa.me/{{ numero_whatsapp }}?text=Bonjour%2C%20je%20voudrais%20des%20informations%20sur%20vos%20produits" class="btn-whatsapp-header" target="_blank">
+                <span class="icone-whatsapp">●</span> 625 47 61 47
+            </a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-image" style="background-image:url('{{ url_for('static', filename='marque/boutique-facade.jpg') }}');"></div>
+    <div class="hero-texte">
+        <h2>Téléphones, accessoires &amp; électroménager<br>au meilleur prix à Kindia</h2>
+        <p>Parcourez notre catalogue et commandez directement sur WhatsApp — aucune inscription, aucun compte, juste un message.</p>
+    </div>
+</section>
+
+<section class="a-propos">
+    <div class="a-propos-inner">
+        <img src="{{ url_for('static', filename='marque/boutique-vitrine.jpg') }}" alt="Vitrine {{ nom_boutique }}" class="a-propos-image">
+        <div>
+            <h2>Notre boutique</h2>
+            <p>Installés au marché de Kindia (Stand B017), nous sommes distributeur agréé TECNO
+               et proposons téléphones neufs, accessoires, solutions solaires, climatiseurs et électroménager
+               à des prix compétitifs. Contactez-nous directement sur WhatsApp pour toute question
+               ou disponibilité.</p>
+        </div>
+    </div>
+</section>
+
+<section class="nouveautes">
+    <h2 class="nouveautes-titre">✨ Derniers produits ajoutés</h2>
+    <div class="nouveautes-grille" id="nouveautes-grille"></div>
+</section>
+
+<div class="recherche-wrap">
+    <input type="search" id="recherche" class="recherche-input" placeholder="🔍 Rechercher un produit (ex: iPhone, power bank...)">
+</div>
+
+<nav class="filtres" id="filtres">
+    <button class="filtre-btn actif" data-cat="tous">Tous les produits</button>
+    {% for valeur, libelle in categories %}
+    <button class="filtre-btn" data-cat="{{ valeur }}">{{ libelle }}</button>
+    {% endfor %}
+</nav>
+
+<main class="catalogue" id="catalogue"></main>
+
+<footer class="pied">
+    <div class="pied-inner">
+        <img src="{{ url_for('static', filename='marque/logo.jpg') }}" alt="{{ nom_boutique }}" class="pied-logo">
+        <p><strong>{{ nom_boutique }}</strong> — Distributeur agréé TECNO</p>
+        <p>📍 Marché de Kindia, Stand B017</p>
+        <p>📞 Appeler ou WhatsApp : <a href="https://wa.me/{{ numero_whatsapp }}" target="_blank">625 47 61 47</a></p>
+        <div class="pied-carte">
+            <iframe
+                src="https://maps.google.com/maps?q=March%C3%A9%20de%20Kindia%2C%20Guin%C3%A9e&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="220" style="border:0; border-radius:12px;"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Localisation - Marché de Kindia">
+            </iframe>
+        </div>
+        <p class="pied-hgd">Site réalisé par Horizon Gestion Digitale</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/{{ numero_whatsapp }}?text=Bonjour%2C%20je%20voudrais%20des%20informations%20sur%20vos%20produits" class="bouton-flottant" target="_blank" aria-label="Contacter sur WhatsApp">
+    <span class="icone-whatsapp-grand">●</span>
+</a>
+<button id="retour-haut" class="retour-haut" aria-label="Retour en haut">↑</button>
+
+<div id="lightbox" class="lightbox">
+    <button class="lightbox-fermer" aria-label="Fermer">✕</button>
+    <img id="lightbox-image" src="" alt="">
+</div>
+
+<div id="modal-details" class="modal-details">
+    <div class="modal-details-boite">
+        <button class="modal-details-fermer" aria-label="Fermer">✕</button>
+        <img id="modal-details-image" src="" alt="" class="modal-details-image">
+        <div class="modal-details-contenu">
+            <h3 id="modal-details-titre"></h3>
+            <ul id="modal-details-specs" class="modal-details-specs"></ul>
+            <a id="modal-details-whatsapp" href="#" target="_blank" class="btn-commander">
+                <span class="icone-whatsapp">●</span> Commander sur WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Produits générés par le serveur (base de données), pas un fichier statique
+    const PRODUITS = {{ produits_json | safe }};
+</script>
+<script src="{{ url_for('static', filename='catalogue.js') }}"></script>
+</body>
+</html>

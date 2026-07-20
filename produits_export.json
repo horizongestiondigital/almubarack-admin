@@ -1,0 +1,395 @@
+[
+  {
+    "nom": "iPhone (Rose Gold)",
+    "categorie": "telephones",
+    "image": "images/tel-iphone-rose.jpg"
+  },
+  {
+    "nom": "Tecno Spark 50 — 128Go/12Go RAM",
+    "categorie": "telephones",
+    "image": "images/tel-tecno-spark50.jpg"
+  },
+  {
+    "nom": "Samsung Galaxy A26 5G",
+    "categorie": "telephones",
+    "image": "images/tel-galaxy-a26.jpg",
+    "details": [
+      "Réseau : 5G",
+      "État : Neuf, scellé",
+      "Garantie : 12 mois",
+      "Couleur : voir photo"
+    ]
+  },
+  {
+    "nom": "Samsung Galaxy A53 5G",
+    "categorie": "telephones",
+    "image": "images/tel-galaxy-a53.jpg"
+  },
+  {
+    "nom": "Samsung Galaxy A15",
+    "categorie": "telephones",
+    "image": "images/tel-galaxy-a15.jpg"
+  },
+  {
+    "nom": "iPhone 11 (Rouge)",
+    "categorie": "telephones",
+    "image": "images/tel-iphone11-rouge.jpg"
+  },
+  {
+    "nom": "Samsung Galaxy Z Fold6",
+    "categorie": "telephones",
+    "image": "images/tel-galaxy-zfold6.jpg"
+  },
+  {
+    "nom": "Villaon V50S — 32Go/4Go RAM",
+    "categorie": "telephones",
+    "image": "images/tel-villaon-v50s.jpg"
+  },
+  {
+    "nom": "Samsung Galaxy Note10+",
+    "categorie": "telephones",
+    "image": "images/tel-note10plus.jpg"
+  },
+  {
+    "nom": "Tecno Camon Slim — 256Go/24Go RAM",
+    "categorie": "telephones",
+    "image": "images/tel-camon-slim.jpg"
+  },
+  {
+    "nom": "iPhone 14 Pro (Gold)",
+    "categorie": "telephones",
+    "image": "images/tel-iphone14pro-gold.jpg"
+  },
+  {
+    "nom": "Samsung Galaxy A57 5G",
+    "categorie": "telephones",
+    "image": "images/tel-galaxy-a57.jpg"
+  },
+  {
+    "nom": "iPhone 13",
+    "categorie": "telephones",
+    "image": "images/tel-iphone13.jpg"
+  },
+  {
+    "nom": "itel A06 — 64Go, écran 6.6\"",
+    "categorie": "telephones",
+    "image": "images/tel-itel-a06.jpg"
+  },
+  {
+    "nom": "Samsung Galaxy A07",
+    "categorie": "telephones",
+    "images": [
+      "images/tel-galaxy-a07.jpg",
+      "images/tel-galaxy-a07-b.jpg"
+    ]
+  },
+  {
+    "nom": "Samsung Galaxy A56 5G",
+    "categorie": "telephones",
+    "image": "images/tel-galaxy-a56.jpg"
+  },
+  {
+    "nom": "Power Bank Solaire SD-43 — 30000mAh",
+    "categorie": "accessoires",
+    "image": "images/acc-powerbank-sd43.jpg",
+    "details": [
+      "Capacité : 30 000mAh",
+      "Charge solaire + USB",
+      "Entrée : Micro/Type-C 5V-2A",
+      "Garantie : 365 jours"
+    ]
+  },
+  {
+    "nom": "Power Bank HEPU 30000mAh",
+    "categorie": "accessoires",
+    "image": "images/acc-powerbank-hepu-orange.jpg"
+  },
+  {
+    "nom": "Power Bank HEPU 20000mAh (Gold)",
+    "categorie": "accessoires",
+    "image": "images/acc-powerbank-hepu-gold.jpg"
+  },
+  {
+    "nom": "Power Bank HEPU 20000mAh HP-A22",
+    "categorie": "accessoires",
+    "image": "images/acc-powerbank-hepu-bleu.jpg"
+  },
+  {
+    "nom": "Power Bank HEPU 20000mAh HP-A26",
+    "categorie": "accessoires",
+    "image": "images/acc-powerbank-hepu-creme.jpg"
+  },
+  {
+    "nom": "Montre connectée Winning Star",
+    "categorie": "accessoires",
+    "image": "images/acc-montre-winningstar.jpg"
+  },
+  {
+    "nom": "Onduleur Solaire Romex 4000W",
+    "categorie": "solaire",
+    "image": "images/solaire-onduleur-romex.jpg"
+  },
+  {
+    "nom": "Onduleur Solaire Estarsolar 1000W",
+    "categorie": "solaire",
+    "image": "images/solaire-onduleur-estarsolar.jpg"
+  },
+  {
+    "nom": "Kit Solaire Yobolife (50h, 4 ampoules)",
+    "categorie": "solaire",
+    "image": "images/solaire-kit-yobolife.jpg"
+  },
+  {
+    "nom": "Panneau solaire",
+    "categorie": "solaire",
+    "image": "images/solaire-panneau.jpg"
+  },
+  {
+    "nom": "Bouilloire Électrique SJF 2.0L",
+    "categorie": "electromenager",
+    "image": "images/electro-bouilloire-sjf.jpg",
+    "details": [
+      "Capacité : 2.0 Litres",
+      "Matériau : Acier inoxydable premium",
+      "État : Neuf"
+    ]
+  },
+  {
+    "nom": "Tablette Enfant Modio Unicorn Tab M7",
+    "categorie": "tablettes",
+    "image": "images/tab-modio-unicorn-m7.jpg"
+  },
+  {
+    "nom": "Tablette Enfant Modio Kids Tab M5",
+    "categorie": "tablettes",
+    "image": "images/tab-modio-m5.jpg"
+  },
+  {
+    "nom": "Climatiseur Amaz 12000 BTU (12K-AL886)",
+    "categorie": "climatiseurs",
+    "image": "images/clim-amaz-12k.jpg",
+    "details": [
+      "Puissance : 12 000 BTU",
+      "Garantie compresseur : 3 ans",
+      "Protection anti-surtension",
+      "Fonctionnement silencieux"
+    ]
+  },
+  {
+    "nom": "Tecno T354",
+    "categorie": "telephones",
+    "image": "images/tel-tecno-t354.jpg"
+  },
+  {
+    "nom": "Tecno T455",
+    "categorie": "telephones",
+    "image": "images/tel-tecno-t455.jpg"
+  },
+  {
+    "nom": "Tecno T316",
+    "categorie": "telephones",
+    "image": "images/tel-tecno-t316.jpg"
+  },
+  {
+    "nom": "Tecno T403",
+    "categorie": "telephones",
+    "image": "images/tel-tecno-t403.jpg"
+  },
+  {
+    "nom": "Villaon V213 — 55 jours d'autonomie",
+    "categorie": "telephones",
+    "image": "images/tel-villaon-v213.jpg"
+  },
+  {
+    "nom": "Villaon V230 — 55 jours d'autonomie",
+    "categorie": "telephones",
+    "image": "images/tel-villaon-v230.jpg"
+  },
+  {
+    "nom": "Multiprise / Rallonge électrique",
+    "categorie": "accessoires",
+    "image": "images/acc-multiprises-etagere.jpg"
+  },
+  {
+    "nom": "Power Bank HEPU 20000mAh (Gold)",
+    "categorie": "accessoires",
+    "image": "images/acc-powerbank-hepu-20000-gold-b.jpg"
+  },
+  {
+    "nom": "Batterie Solaire Felicity Gel 200AH",
+    "categorie": "solaire",
+    "image": "images/solaire-batterie-felicity-200ah.jpg",
+    "details": [
+      "Type : Batterie Gel",
+      "Capacité : 200AH",
+      "Longue durée de vie",
+      "Idéale pour installation solaire"
+    ]
+  },
+  {
+    "nom": "Régulateur de Tension Boston AVR-D 2000VA",
+    "categorie": "solaire",
+    "image": "images/solaire-regulateur-boston-2000va.jpg",
+    "details": [
+      "Puissance : 2000VA",
+      "Entrée : 100V-260V",
+      "Protection haute tension + court-circuit",
+      "Port USB 5V intégré"
+    ]
+  },
+  {
+    "nom": "Batterie Super Crystal Liger King 12V 258AH",
+    "categorie": "solaire",
+    "image": "images/solaire-batterie-supercrystal-258ah.jpg",
+    "details": [
+      "Type : Batterie plomb-acide",
+      "Capacité : 12V / 258AH",
+      "Entretien minimal",
+      "Longue durée de vie"
+    ]
+  },
+  {
+    "nom": "Onduleur Solaire Estarsolar 1000W",
+    "categorie": "solaire",
+    "image": "images/solaire-onduleur-estarsolar-1000w-b.jpg"
+  },
+  {
+    "nom": "Onduleur Solaire Romex 5000W (RM-5000A)",
+    "categorie": "solaire",
+    "image": "images/solaire-onduleur-romex-5000w.jpg",
+    "details": [
+      "Puissance : 5000W",
+      "DC vers AC : 12V-230V",
+      "Port USB 5V",
+      "Design compact"
+    ]
+  },
+  {
+    "nom": "Onduleur Solaire Romex 4000W (RM-4000A)",
+    "categorie": "solaire",
+    "image": "images/solaire-onduleur-romex-4000w.jpg"
+  },
+  {
+    "nom": "Batterie Solaire ND Doghel Gel 12V/100AH",
+    "categorie": "solaire",
+    "image": "images/solaire-batterie-nddoghel-100ah.jpg",
+    "details": [
+      "Type : Batterie Gel rechargeable",
+      "Capacité : 12V / 100AH",
+      "Technologie décharge profonde",
+      "Produit certifié original"
+    ]
+  },
+  {
+    "nom": "Panneau solaire",
+    "categorie": "solaire",
+    "image": "images/solaire-panneau-gros-plan.jpg"
+  },
+  {
+    "nom": "Cuiseur de Riz SJF 3.6L",
+    "categorie": "electromenager",
+    "image": "images/electro-ricecooker-sjf-3.6l.jpg",
+    "details": [
+      "Capacité : 3.6 Litres",
+      "Couvercle acier inoxydable",
+      "Intérieur anti-adhérent",
+      "Maintien au chaud automatique"
+    ]
+  },
+  {
+    "nom": "Cuiseur de Riz Winning Star 8L (ST-9341)",
+    "categorie": "electromenager",
+    "image": "images/electro-ricecooker-winningstar-8l.jpg",
+    "details": [
+      "Capacité : 8 Litres",
+      "Cordon d'alimentation cuivre pur",
+      "Intérieur anti-adhérent",
+      "Depuis 1999"
+    ]
+  },
+  {
+    "nom": "Cuiseur de riz SJF 3.6L",
+    "categorie": "electromenager",
+    "image": "images/electro-riz-sjf-3.6l.jpg"
+  },
+  {
+    "nom": "Cuiseur de riz Winning Star 8L ST-9341",
+    "categorie": "electromenager",
+    "image": "images/electro-riz-winningstar-8l.jpg"
+  },
+  {
+    "nom": "Batterie Solaire Felicity Gel 200AH",
+    "categorie": "solaire",
+    "image": "images/solaire-batterie-felicity.jpg"
+  },
+  {
+    "nom": "Batterie Solaire Super Crystal 258AH",
+    "categorie": "solaire",
+    "image": "images/solaire-batterie-supercrystal.jpg"
+  },
+  {
+    "nom": "Batterie Solaire ND Doghel Gel 100AH",
+    "categorie": "solaire",
+    "image": "images/solaire-batterie-nddoghel.jpg"
+  },
+  {
+    "nom": "Régulateur de Tension Boston AVR-D 2000VA",
+    "categorie": "solaire",
+    "image": "images/solaire-regulateur-boston.jpg"
+  },
+  {
+    "nom": "Onduleur Solaire Estarsolar 1000W",
+    "categorie": "solaire",
+    "image": "images/solaire-onduleur-estarsolar2.jpg"
+  },
+  {
+    "nom": "Onduleur Solaire Romex 5000W RM-5000A",
+    "categorie": "solaire",
+    "image": "images/solaire-onduleur-romex5000.jpg"
+  },
+  {
+    "nom": "Panneau solaire",
+    "categorie": "solaire",
+    "image": "images/solaire-panneau2.jpg"
+  },
+  {
+    "nom": "Tecno T354",
+    "categorie": "telephones",
+    "image": "images/tel-tecno-t354.jpg"
+  },
+  {
+    "nom": "Tecno T455",
+    "categorie": "telephones",
+    "image": "images/tel-tecno-t455.jpg"
+  },
+  {
+    "nom": "Tecno T316",
+    "categorie": "telephones",
+    "image": "images/tel-tecno-t316.jpg"
+  },
+  {
+    "nom": "Tecno T403",
+    "categorie": "telephones",
+    "image": "images/tel-tecno-t403.jpg"
+  },
+  {
+    "nom": "Villaon V213",
+    "categorie": "telephones",
+    "image": "images/tel-villaon-v213.jpg"
+  },
+  {
+    "nom": "Villaon V230",
+    "categorie": "telephones",
+    "image": "images/tel-villaon-v230.jpg"
+  },
+  {
+    "nom": "Power Bank HEPU 20000mAh (Gold)",
+    "categorie": "accessoires",
+    "image": "images/acc-powerbank-hepu-gold2.jpg"
+  },
+  {
+    "nom": "Climatiseur Amaz 12K",
+    "categorie": "climatiseurs",
+    "image": "images/clim-amaz-12k.jpg"
+  }
+]
